@@ -1,19 +1,19 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity fsmtb_gcd  is 
-	end fsmtb_gcd;
+entity tb_gcd  is 
+	end tb_gcd;
 
-architecture behavior of fsmtb_gcd is 
+architecture behavior of tb_gcd is 
 signal CLK, RESET: std_logic;
 signal A, B, GCD: integer;
-component fsmgcd 
+component gcd 
 	port(CLK, RESET : IN STD_LOGIC;
 	    A, B: IN INTEGER;
 	    GCD : OUT INTEGER);
 END COMPONENT;
 BEGIN
-fsmgcd1 : fsmgcd port map(CLK=> CLK, RESET=>  RESET, A=>A, B=>B, GCD=>GCD);
+gcd1 : gcd port map(CLK=> CLK, RESET=>  RESET, A=>A, B=>B, GCD=>GCD);
 clock: process
 begin
 	CLK<= '1';

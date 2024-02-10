@@ -6,7 +6,7 @@ USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 ENTITY demux_test IS
 END demux_test;
 
-ARCHITECTURE test_arch OF demux_test IS
+ARCHITECTURE test_architecture OF demux_test IS
 SIGNAL A,S2,S1,S0,Y7,Y6,Y5,Y4,Y3,Y2,Y1,Y0: STD_LOGIC;
 
 COMPONENT demux 
@@ -66,4 +66,4 @@ BEGIN
 
 		WAIT;
 	END PROCESS stimulus_process;
-END test_arch;
+END test_architecture;
