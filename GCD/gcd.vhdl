@@ -1,13 +1,13 @@
 library  ieee;
 use ieee.std_logic_1164.all;
 
-entity lcm is
+entity fsmgcd is
 	port(RESET, CLK : in std_logic;
 	    A, B : in integer;
-	    LCMout : out integer);
-end lcm;
+	    GCD : out integer);
+end fsmgcd;
 
-architecture behavior of lcm is
+architecture behavior of fsmgcd is
 type state is (start, input, output, check, check1,updatex,  updatey);
 signal current_state, next_state: state;
 begin
@@ -20,7 +20,7 @@ BEGIN
 	END IF;
 end process;
 compute:Process(A, B, current_state)
-variable  z, x, y, r, p : integer;
+variable x, y, r, p : integer;
 begin
 	case current_state IS 
 		WHEN start =>
@@ -28,7 +28,6 @@ begin
 		WHEN input =>
 			x:= A;
 			y:= B;
-			z := x * y;
 			next_state <= check;
 		WHEN check =>
 			if(x< y) THEN
@@ -52,10 +51,11 @@ begin
 			x:=x;
 			y:=y;
 		WHEN output =>
-			LCMout <= z / x;	
+			GCD <= 	x;
 			next_state <= start;
 		WHEN others =>
 			next_state <= start;
 	end case;
 end process compute;
 end behavior;
+
