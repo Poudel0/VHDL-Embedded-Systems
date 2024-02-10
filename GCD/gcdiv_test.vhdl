@@ -37,6 +37,7 @@ begin
 	B <= 234;
 	wait for 2600 ns;
 	
+	
 	A <= 546;
 	B <= 24;
 	wait for 2600 ns;
