@@ -42,5 +42,4 @@ begin
         assert false report "Reached end of Test";
         wait;
     end process;
-
 end test;
