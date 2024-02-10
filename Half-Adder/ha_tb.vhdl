@@ -1,10 +1,10 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity ha_tb is 
-end ha_tb;
+entity ha_test is 
+end ha_test;
 
-architecture test of ha_tb is
+architecture test of ha_test is
     component ha
     port(
         a: in std_ulogic;
