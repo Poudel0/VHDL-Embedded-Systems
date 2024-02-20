@@ -1,19 +1,19 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity tb_lcm  is 
-	end tb_lcm;
+entity fsmtb_lcm  is 
+	end fsmtb_lcm;
 
-architecture behavior of tb_lcm is 
+architecture behavior of fsmtb_lcm is 
 signal CLK, RESET: std_logic;
 signal A, B, LCM: integer;
-component LCM 
+component fsm_LCM 
 	port(CLK, RESET : IN STD_LOGIC;
 	    A, B: IN INTEGER;
 	    LCM : OUT INTEGER);
 END COMPONENT;
 BEGIN
-LCM1 : LCM port map(CLK=> CLK, RESET=>  RESET, A=>A, B=>B, LCM=>LCM);
+fsm_LCM1 : fsm_LCM port map(CLK=> CLK, RESET=>  RESET, A=>A, B=>B, LCM=>LCM);
 clock: process
 begin
 	CLK<= '1';

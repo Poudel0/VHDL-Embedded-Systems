@@ -1,13 +1,13 @@
 library  ieee;
 use ieee.std_logic_1164.all;
 
-entity lcm is
+entity fsm_lcm is
 	port(RESET, CLK : in std_logic;
 	    A, B : in integer;
-	    LCMout : out integer);
-end lcm;
+	    LCM : out integer);
+end fsm_lcm;
 
-architecture behavior of lcm is
+architecture behavior of fsm_lcm is
 type state is (start, input, output, check, check1,updatex,  updatey);
 signal current_state, next_state: state;
 begin
@@ -52,7 +52,7 @@ begin
 			x:=x;
 			y:=y;
 		WHEN output =>
-			LCMout <= z / x;	
+			LCM <= z / x;	
 			next_state <= start;
 		WHEN others =>
 			next_state <= start;

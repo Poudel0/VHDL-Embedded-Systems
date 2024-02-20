@@ -1,13 +1,13 @@
 library  ieee;
 use ieee.std_logic_1164.all;
 
-entity gcd is
+entity fsmgcd is
 	port(RESET, CLK : in std_logic;
 	    A, B : in integer;
 	    GCD : out integer);
-end gcd;
+end fsmgcd;
 
-architecture behavior of gcd is
+architecture behavior of fsmgcd is
 type state is (start, input, output, check, check1,updatex,  updatey);
 signal current_state, next_state: state;
 begin
