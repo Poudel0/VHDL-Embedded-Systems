@@ -1,5 +1,7 @@
 ## **VHDL Lessons with Programs & Tests for Embedded Systems**
-
+Submitted By:
+Sampanna Adhikari (BCT033)
+Sandesh Poudel (BCT044)
 
 This repository contains VHDL code for various designs.
 
