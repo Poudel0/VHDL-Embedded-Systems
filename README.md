@@ -66,7 +66,7 @@ This repository contains VHDL code for various designs.
    To convert the VHDL simulation output to VCD format, use the following command:
    
    ```sh
-   $ ghdl -r filename --vcd=filename.vcd
+   $ ghdl -r -fsynopsys filename --vcd=filename.vcd
    ```
 
 5. **Visualize:**
